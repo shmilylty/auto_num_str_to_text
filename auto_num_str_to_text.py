@@ -11,6 +11,8 @@ def print_error():
 def input_filter():
     print('[*] You can input binary/decimal/hexadecimal numeric string to convert text.')
     data = raw_input('[<] ')
+    if len(data) == 0:
+        print_error()
     filter_char = []
     for num in xrange(0, 48):
         filter_char.append(chr(num))
