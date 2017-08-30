@@ -22,10 +22,9 @@ def input_filter():
         filter_char.append(chr(num))
     for num in xrange(103, 256):
         filter_char.append(chr(num))
-    filter_char.append('0x', '0X', '0b', '0B')
+    filter_char.extend(['0x', '0X', '0b', '0B', '\\x'])
     for char in filter_char:
         data = data.replace(char, '')
-
     return data
 
 
@@ -100,7 +99,7 @@ def main():
         decimal_to_text(num_str)
     if det_res == 16:
         hexadecimal_to_text(num_str)
-    
+
 
 if __name__ == '__main__':
     main()
